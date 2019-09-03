@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'Stolzl-Regular';
+  src: url('Stolzl-Regular.eot?#iefix') format('embedded-opentype'),  url('Stolzl-Regular.otf')  format('opentype'),
+	     url('Stolzl-Regular.woff') format('woff'), url('Stolzl-Regular.ttf')  format('truetype'), url('Stolzl-Regular.svg#Stolzl-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
