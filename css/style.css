@@ -848,7 +848,7 @@ footer {
 .triangle__item.triangle__item--one {
     right: 30%;
     top: -70px;
-    animation: rotating 30s linear infinite;
+    /*animation: rotating 30s linear infinite;*/
 }
 .triangle__item.triangle__item--two {
     left: 15%;
@@ -876,7 +876,7 @@ footer {
 
 }
 
-@-webkit-keyframes rotating /* Safari and Chrome */ {
+@-webkit-keyframes rotating{
     from {
         transform: rotate(0deg);
     }
@@ -893,7 +893,25 @@ footer {
     }
 }
 
-/*.triangle__item > div {*/
-    /*animation: none !important;*/
+/*.triangle__item > div.triangle__item--one {*/
+/*    animation: none !important;*/
+
+/*}.triangle__item {*/
+/*     background: red;*/
+/*     filter: blur(1px);*/
+/*    animation: none !important;*/
+/*}*/
+
+/*.ttTR {*/
+/*    transform: translate(200px, 200px);*/
+/*}*/
+/*.ttTL {*/
+/*    transform: translate(-200px, 200px);*/
+/*}*/
+/*.ttBR {*/
+/*    transform: translate(200px, -200px);*/
+/*}*/
+/*.ttBL {*/
+/*    transform: translate(-200px, -200px);*/
 /*}*/
 

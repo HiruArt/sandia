@@ -10,15 +10,11 @@ $(document).ready(function () {
         var offset = this.pageYOffset;
         var distance = $('.footer__hand-phone').offset().top;
         $('.project-item').each(function () {
-            // console.log($(this));
             if(offset + 600 > $(this)[0].offsetTop ){
                 $(this).addClass('project-item--animate');
             }
 
         });
-        // if(this.pageYOffset + 600 > top){
-        //     $('.project__list').addClass('project__list--animate');
-        // }
 
         if (offset > distance - 300  ) {
             $('.footer__hand-phone').addClass('show');
@@ -69,85 +65,123 @@ $(document).ready(function () {
     //     })
     // }
 
+    let one =  $('.triangle__item--one');
+    let two = $('.triangle__item--two');
+    let three = $('.triangle__item--three');
+    let four = $('.triangle__item--four');
+    let five = $('.triangle__item--five');
 
 
+    $('.triangle__item').each(function (e) {
 
-    var one =  $('.triangle__item--one');
-    var two = $('.triangle__item--two');
-    var three = $('.triangle__item--three');
-    var four = $('.triangle__item--four');
-    var five = $('.triangle__item--five');
+        let mauseXold = 0;
+        let mauseX = 0;
+        let mauseYold = 0;
+        let mauseY = 0;
 
-    animateTriangle(one);
-    animateTriangle(two);
-    animateTriangle(three);
-    animateTriangle(four);
-    animateTriangle(five);
+        setInterval(function () {
+            $(window).mousemove( function (x) {
+                mauseX = x.pageX;
+                mauseY = x.pageY;
+            });
+            mauseXold = mauseX;
+            mauseYold = mauseY;
+        }, 200);
+
+        let positionXold = $(this).offset().left;
+        let positionYold = $(this).offset().top;
+
+        $(this).hover(
+        function moveRight() {
+
+            let positionX;
+            let positionY;
+
+            $(this).animate().stop(true);
+            if (mauseX > mauseXold && mauseY < mauseYold ) {
+                positionX = $(this).offset().left + 200;
+                positionY = $(this).offset().top - 200;
+                $(this).animate( { left : positionX, top : positionY}, 1500 );
+                // $(this).animate( { left : +50, top : -50}, 1500 );
+                // $(this).addClass('ttBR');
+            }
+            if (mauseX > mauseXold && mauseY > mauseYold ) {
+                positionX = $(this).offset().left + 200;
+                positionY = $(this).offset().top + 200;
+                $(this).animate( { left : positionX, top : positionY}, 1500 );
+                // $(this).animate( { left : +50, top : +50}, 1500 );
+                // $(this).addClass('ttTR');
+
+            }
+            if (mauseX < mauseXold && mauseY < mauseYold ) {
+                positionX = $(this).offset().left - 200;
+                positionY = $(this).offset().top - 200;
+                $(this).animate( { left : positionX, top : positionY}, 1500 );
+                // $(this).animate( { left : -50, top : -50}, 1500 );
+                // $(this).addClass('ttBL');
+            }
+            if (mauseX < mauseXold && mauseY > mauseYold ) {
+                positionX = $(this).offset().left - 200;
+                positionY = $(this).offset().top + 200;
+                $(this).animate( { left : positionX, top : positionY}, 1500 );
+                // $(this).animate( { left : -50, top : +50}, 1500 );
+                // $(this).addClass('ttTL');
+            }
+            console.log($(this));
+        },
+        function () {
+
+            $(this).animate( { left : positionXold, top : positionYold}, 1500 );
+
+            // $(this).removeClass('ttTL');
+            // $(this).removeClass('ttBL');
+            // $(this).removeClass('ttTR');
+            // $(this).removeClass('ttBR');
+            animationStart($(this));
+        })
+    });
+
+    function animationStart(e) {
+        animateTri(e);
+    }
+
+    animationStart(one);
+    animationStart(two);
+    animationStart(three);
+    animationStart(four);
+    animationStart(five);
 
     $(window).scroll();
 });
 
+function animateTri(e) {
+    let newPos = newPosition();
+    let nowPositionElement = e.offset();
+    let moveSpeed = calcElementSpeed([nowPositionElement.top, nowPositionElement.left], newPos);
 
-function makeNewPosition(){
-
-    // Get viewport dimensions (remove the dimension of the div)
-
-
-    // var h = $(window).height() - 50;
-    // var w = $(window).width() - 50;
-
-
-    var h = $('.triangle__inner').height() - 250;
-    var w = $(window).width() - 50;
-
-    var nw, nh;
-
-    // nh = Math.floor(Math.random() * h);
-    // nw = Math.floor(Math.random() * w);
-    // if (pos) {
-    //     nh = Math.floor(Math.random() * h);
-    //     nw = 1;
-    // }
-    // else {
-        nh = Math.floor(Math.random() * h);
-        nw = Math.floor(Math.random() * w);
-    // }
-
-    return [nh,nw];
-
-}
-
-function animateTriangle(e){
-    var newq = makeNewPosition();
-    var oldq = e.offset();
-    var speed = calcSpeed([oldq.top, oldq.left], newq);
-
-    // $('.triangle__item--one').animate({ top: newq[0], left: newq[1] }, speed, function(){
-    //     animateDiv();
-    // });
-    // $('.triangle__item--two').animate({ top: newq[0], left: newq[1] }, speed, function(){
-    //     animateDiv();
-    // });
-    // $('.triangle__item--three').animate({ top: newq[0], left: newq[1] }, speed, function(){
-    //     animateDiv();
-    // });
-    e.animate({ top: newq[0], left: newq[1] }, speed, function(){
-        animateTriangle(e);
+    e.animate({ top: newPos[0], left: newPos[1] }, moveSpeed, function(){
+        animateTri(e);
     });
-
-};
-
-function calcSpeed(prev, next) {
-
-    var x = Math.abs(prev[1] - next[1]);
-    var y = Math.abs(prev[0] - next[0]);
-
-    var greatest = x > y ? x : y;
-
-    var speedModifier = 0.1;
-
-    var speed = Math.ceil(greatest/speedModifier);
-
-    return speed;
-
 }
+function newPosition() {
+
+    let h = $('.triangle__inner').height() - 250;
+    let w = $(window).width() - 50;
+
+    let nextHeightY = Math.floor(Math.random()* h);
+    let nextWidthX = Math.floor(Math.random()* w);
+
+    return [nextHeightY, nextWidthX];
+}
+function calcElementSpeed(prev, next) {
+
+    let x = Math.abs(prev[1] - next[1]);
+    let y = Math.abs(prev[0] - next[0]);
+
+    let moveSpeed = 5000;
+
+    return moveSpeed;
+}
+
+
+
