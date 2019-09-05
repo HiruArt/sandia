@@ -22,11 +22,11 @@ $(document).ready(function () {
     });
 
 
-    let one =  $('.triangle__item--one');
-    let two = $('.triangle__item--two');
-    let three = $('.triangle__item--three');
-    let four = $('.triangle__item--four');
-    let five = $('.triangle__item--five');
+    var one =  $('.triangle__item--one');
+    var two = $('.triangle__item--two');
+    var three = $('.triangle__item--three');
+    var four = $('.triangle__item--four');
+    var five = $('.triangle__item--five');
 
 
 if($(window).width() > 1150 ){
@@ -106,9 +106,9 @@ if($(window).width() > 1150 ){
 });
 
 function animateTri(e) {
-    let newPos = newPosition(e);
-    let nowPositionElement = e.offset();
-    let moveSpeed = calcElementSpeed([nowPositionElement.top, nowPositionElement.left], newPos);
+    var newPos = newPosition(e);
+    var nowPositionElement = e.offset();
+    var moveSpeed = calcElementSpeed([nowPositionElement.top, nowPositionElement.left], newPos);
 
     e.animate({ top: newPos[0], left: newPos[1] }, moveSpeed, function(){
         animateTri(e);
