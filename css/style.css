@@ -145,16 +145,16 @@ main {
 }
 
 .project-item.project-item--animate:nth-child(1) {
-    transition-delay: 0.3s;
+    /*transition-delay: 0.3s;*/
 }
 .project-item.project-item--animate:nth-child(2) {
-    transition-delay: 0.5s;
+    transition-delay: 0.3s;
 }
 .project-item.project-item--animate:nth-child(3) {
-    transition-delay: 0.6s;
+    transition-delay: 0.4s;
 }
 .project-item.project-item--animate:nth-child(4) {
-    transition-delay: 0.8s;
+    transition-delay: 0.6s;
 }
 
 .project-item:nth-child(even) {
@@ -602,17 +602,18 @@ footer {
         font-size: 20px;
     }
     .project-item.project-item--animate:nth-child(1) {
-        transition-delay: 0.15s;
+        transition-delay: 0s;
     }
     .project-item.project-item--animate:nth-child(2) {
-        transition-delay: 0.25s;
+        transition-delay: 0s;
     }
     .project-item.project-item--animate:nth-child(3) {
-        transition-delay: 0.3s;
+        transition-delay: 0s;
     }
     .project-item.project-item--animate:nth-child(4) {
-        transition-delay: 0.4s;
+        transition-delay: 0s;
     }
+
 }
 
 @media (max-width: 1300px) {
@@ -632,7 +633,7 @@ footer {
 
 @media (max-width: 1260px) {
     .project-item:nth-child(even) {
-        transform: translateY(0);
+        transform: translateY(-100px);
     }
     .project-item.project-item--animate:nth-child(even){
         transform: translateY(0);
