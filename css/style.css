@@ -19,7 +19,7 @@ header {
 }
 .header {
     /*margin: 79px 0 294px 127px;*/
-    padding: 79px 0 294px 127px;
+    padding: 59px 0 294px 127px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,7 +33,7 @@ header {
     width: 100%;
     display: flex;
     align-items: center;
-    margin-bottom: 206px;
+    margin-bottom: 175px;
     z-index: 10;
     position: relative;
 }
@@ -78,7 +78,7 @@ header {
     position: relative;
     font-weight: 600;
 
-    line-height: 1.5;
+    line-height: 1.2;
 }
 /*.header-bottom__title span{*/
     /*display: none;*/
@@ -108,7 +108,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 325px;
+    margin-top: 235px;
 }
 .project__list {
     display: flex;
@@ -524,7 +524,7 @@ footer {
     }
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1600px) {
     .header {
         padding: 60px 60px 60px 60px;
     }
@@ -579,7 +579,7 @@ footer {
     }
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1600px) {
     .footer__hand-phone {
         max-width: 450px;
     }
@@ -600,6 +600,33 @@ footer {
     }
     .project__more-btn-link {
         font-size: 20px;
+    }
+    .project-item.project-item--animate:nth-child(1) {
+        transition-delay: 0.15s;
+    }
+    .project-item.project-item--animate:nth-child(2) {
+        transition-delay: 0.25s;
+    }
+    .project-item.project-item--animate:nth-child(3) {
+        transition-delay: 0.3s;
+    }
+    .project-item.project-item--animate:nth-child(4) {
+        transition-delay: 0.4s;
+    }
+}
+
+@media (max-width: 1300px) {
+    .project-item {
+        max-width: 540px;
+    }
+    .project-top {
+        padding: 20px 45px;
+    }
+    .project-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px 30px 44px;
     }
 }
 
@@ -622,7 +649,6 @@ footer {
     .footer__hand-phone {
         display: none;
     }
-
     .footer-bottom {
         margin-top: 80px;
     }
@@ -1053,7 +1079,7 @@ footer {
     .triangle__item.triangle__item--one {
         right: 0%;
         top: auto;
-        bottom: -205px;
+        bottom: -275px;
     }
     .triangle__item.triangle__item--one svg{
         /*transform: rotate(-20deg);*/
