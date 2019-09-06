@@ -10,7 +10,7 @@ $(document).ready(function () {
         var offset = this.pageYOffset;
         var distance = $('.footer__hand-phone').offset().top;
         $('.project-item').each(function () {
-            if(offset + 600 > $(this)[0].offsetTop ){
+            if(offset - 300 > $(this)[0].offsetTop ){
                 $(this).addClass('project-item--animate');
             }
 

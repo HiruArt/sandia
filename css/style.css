@@ -895,6 +895,12 @@ footer {
     top: 20px;
 }
 
+@media (min-width: 1100px) {
+    .triangle__item.triangle__item--four {
+        transform: translateY(150px);
+    }
+}
+
 .triangle__item.triangle__item--five {
     right: 35%;
     bottom: -350px;
