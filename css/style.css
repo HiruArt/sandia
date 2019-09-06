@@ -72,11 +72,13 @@ header {
 }
 .header-bottom__title {
     font-size: 95px;
-    font-weight: 500;
     color: #1f1c0d;
     margin: 0;
     z-index: 5;
     position: relative;
+    font-weight: 600;
+
+    line-height: 1.5;
 }
 /*.header-bottom__title span{*/
     /*display: none;*/
@@ -129,7 +131,7 @@ main {
 }
 
 .project-item:nth-child(even){
-    transition: 1s 0.5s;
+    transition: 0.5s 0.5s;
     transform: translateY(0);
 }
 
@@ -140,6 +142,19 @@ main {
 
 .project-item.project-item--animate:nth-child(even){
     transform: translateY(90px);
+}
+
+.project-item.project-item--animate:nth-child(1) {
+    transition-delay: 0.3s;
+}
+.project-item.project-item--animate:nth-child(2) {
+    transition-delay: 0.5s;
+}
+.project-item.project-item--animate:nth-child(3) {
+    transition-delay: 0.6s;
+}
+.project-item.project-item--animate:nth-child(4) {
+    transition-delay: 0.8s;
 }
 
 .project-item:nth-child(even) {
@@ -256,6 +271,7 @@ footer {
     display: flex;
     justify-content: center;
 }
+
 .footer__inner {
     max-width: 1920px;
     width: 100%;
@@ -321,22 +337,25 @@ footer {
     }
 }
 .footer-top {
-    max-width: 675px;
-    width: 100%;
+    /*max-width: 675px;*/
+    /*width: 100%;*/
 }
 .footer-top__title {
-    font-size: 60px;
+    /*font-size: 60px;*/
+    font-size: 55px;
     color: #1f1c0d;
     position: relative;
     z-index: 5;
     position: relative;
+    display: inline-flex;
+    font-weight: 600;
 }
 .footer-top__title:after {
     content: '';
     display: flex;
     background:url("../img/Hand.png") center center no-repeat;
     position: absolute;
-    right: -100px;
+    right: -110px;
     top: -28px;
     width: 100px;
     height: 100px;
@@ -346,6 +365,7 @@ footer {
     margin-top: 75px;
     z-index: 5;
     position: relative;
+    display: flex;
 }
 .footer-top__contact a {
     font-size: 41px;
@@ -373,7 +393,8 @@ footer {
 }
 .footer-center {
     margin-top: 148px;
-    max-width: 675px;
+    /*max-width: 675px;*/
+    max-width: 570px;
     width: 100%;
 }
 .footer-center__inner {
@@ -533,7 +554,7 @@ footer {
         padding: 160px 0 60px 60px;
     }
     .footer-top {
-        max-width: 500px;
+        /*max-width: 500px;*/
     }
     .footer-top__title {
         font-size: 40px;
@@ -564,6 +585,21 @@ footer {
     }
     .footer-bottom {
         margin-top: 220px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .project-top__title {
+        font-size: 22px;
+    }
+    .project-top__desc {
+        font-size: 22px;
+    }
+    .project-bottom__btn-link {
+        font-size: 22px;
+    }
+    .project__more-btn-link {
+        font-size: 20px;
     }
 }
 
@@ -638,7 +674,7 @@ footer {
         padding-top: 20px;
     }
     .header-top__menu-item {
-        margin: 15px 0;
+        margin: 15px 0 !important;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -650,8 +686,8 @@ footer {
     .header-top__mobile-menu-bottom {
         display: flex;
         flex-direction: column;
-        width: 100%;
-        max-width: 320px;
+        /*width: 100%;*/
+        /*max-width: 320px;*/
         margin: 0 auto;
     }
     .header-top__mobile-menu-bottom .footer-top__title {
@@ -660,7 +696,7 @@ footer {
     .header-top__mobile-menu-bottom .footer-top__title:after {
         width: 50px;
         height: 50px;
-        right: 0;
+        right: -15px;
         top: -18px;
     }
     .header-top__mobile-menu-bottom .footer-top__contact {
@@ -705,7 +741,7 @@ footer {
     }
 
     .footer-top__title:after {
-        right: -10px;
+        right: -70px;
     }
 
     .footer__inner {
@@ -718,10 +754,10 @@ footer {
         justify-content: center;
     }
     .footer-top {
-        max-width: 400px;
+        /*max-width: 400px;*/
     }
     .footer-top.header-top__mobile-menu-bottom {
-        max-width: 320px;
+        /*max-width: 320px;*/
     }
     .footer-top__title {
         font-size: 30px;
@@ -737,7 +773,8 @@ footer {
         font-size: 24px;
     }
     .footer-center {
-        max-width: 400px;
+        /*max-width: 400px;*/
+        max-width: 315px;
         margin-top: 50px;
     }
     .header-top__logo {
@@ -773,6 +810,7 @@ footer {
     }
     .footer-center {
         margin-top: 20px;
+        max-width: 265px;
     }
     .footer-center__inner {
         flex-direction: column;
@@ -818,7 +856,7 @@ footer {
     .footer-top__title:after {
         width: 50px;
         height: 50px;
-        right: 0;
+        right: -60px;
         top: -12px;
     }
     .footer-top__contact a {
@@ -841,7 +879,7 @@ footer {
         font-size: 18px;
     }
     .footer-top.header-top__mobile-menu-bottom {
-        max-width: 300px;
+        /*max-width: 300px;*/
     }
 
     .footer-bottom__caption-city {
@@ -865,7 +903,6 @@ footer {
     position: relative;
     height: 80%;
 }
-
 .triangle__inner--two {
     overflow: hidden;
     height: 100%;
@@ -946,12 +983,49 @@ footer {
     }
 }
 
-
+@media (max-width: 1450px) {
+    .triangle__item {
+        width: 300px;
+        height: 300px;
+    }
+    .triangle__item svg {
+        height: 300px;
+        width: 300px;
+    }
+    .header-top {
+        margin-bottom: 110px;
+    }
+    .header-top__menu-item {
+        margin: 0 20px;
+    }
+    .header-top__logo {
+        margin-right: 60px;
+    }
+    .header-top__menu-link {
+        font-size: 20px;
+    }
+}
 @media (max-width: 1400px) {
+    /*.triangle__item.triangle__item--three {*/
+        /*right: 0%;*/
+        /*!*bottom: -120px;*!*/
+        /*bottom: -50px;*/
+    /*}*/
+    .triangle__item.triangle__item--one {
+        right: 11%;
+        top: -35px;
+    }
     .triangle__item.triangle__item--three {
         right: 0%;
-        /*bottom: -120px;*/
-        bottom: -50px;
+        bottom: -40%;
+    }
+    .triangle__item.triangle__item--two {
+        left: 5%;
+        bottom: -40%;
+    }
+    .triangle__item.triangle__item--five {
+        right: 25%;
+        bottom: -200px;
     }
 }
 @media (max-width: 1150px) {
@@ -1018,12 +1092,15 @@ footer {
 
     .triangle__item.triangle__item--four {
         right: auto;
-        top: 116px;
         left: -130px;
+        top: auto;
+        bottom: -40px;
     }
     .triangle__item.triangle__item--five {
-        bottom: -45px;
+        /*bottom: -45px;*/
+        bottom: -130px;
     }
+
 }
 
 

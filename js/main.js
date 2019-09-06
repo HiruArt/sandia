@@ -22,6 +22,17 @@ $(document).ready(function () {
     });
 
 
+    $(".header-top__menu-item").on("click",".header-top__menu-link", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+        top = $(id).offset().top;
+        $('body,html').animate({scrollTop: top}, 1500);
+    });
+
+
+
+
+
     var one =  $('.triangle__item--one');
     var two = $('.triangle__item--two');
     var three = $('.triangle__item--three');
