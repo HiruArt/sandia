@@ -527,9 +527,6 @@ footer {
         bottom: 140px;
         max-width: 530px;
     }
-}
-
-@media (max-width: 1600px) {
     .header {
         padding: 60px 60px 60px 60px;
     }
@@ -582,14 +579,26 @@ footer {
     .footer-bottom__caption {
         font-size: 18px;
     }
-}
-
-@media (max-width: 1600px) {
     .footer__hand-phone {
         max-width: 450px;
     }
     .footer-bottom {
         margin-top: 220px;
+    }
+    .header-top__logo {
+        width: 150px;
+        margin-right: 50px;
+        margin-left: 14px;
+    }
+    .header-bottom__title {
+        font-size: 60px;
+    }
+    .header-bottom__desc {
+        max-width: 706px;
+        font-size: 20px;
+    }
+    .header-bottom {
+        max-width: 560px;
     }
 }
 
@@ -619,7 +628,7 @@ footer {
         transition-delay: 0s;
     }
     .header-top__logo {
-        width: 170px;
+        width: 150px;
     }
     .header-top__logo img{
         width: 100%;
@@ -950,18 +959,20 @@ footer {
     position: absolute;
     filter: blur(5px);
 }
+/*.triangle__item.triangle__item--one {*/
+    /*right: 10%;*/
+    /*top: -70px;*/
+/*}*/
 .triangle__item.triangle__item--one {
-    right: 10%;
-    top: -70px;
+    right: 32%;
+    top: 69px;
 }
 .triangle__item.triangle__item--two {
-    left: 15%;
-    /*bottom: -100px;*/
+    left: 0%;
     bottom: 0;
 }
 .triangle__item.triangle__item--three {
-    right: 5%;
-    /*bottom: -120px;*/
+    right: 13%;
     bottom: 20px;
 }
 .triangle__item.triangle__item--four {
@@ -1040,21 +1051,16 @@ footer {
     }
 }
 @media (max-width: 1400px) {
-    /*.triangle__item.triangle__item--three {*/
-        /*right: 0%;*/
-        /*!*bottom: -120px;*!*/
-        /*bottom: -50px;*/
-    /*}*/
     .triangle__item.triangle__item--one {
-        right: 11%;
-        top: -35px;
+        right: 25%;
+        top: 42px;
     }
     .triangle__item.triangle__item--three {
-        right: 0;
-        bottom: -40%;
+        right: 15%;
+        bottom: -54%;
     }
     .triangle__item.triangle__item--two {
-        left: 5%;
+        left: -5%;
         bottom: -40%;
     }
     .triangle__item.triangle__item--five {
@@ -1137,13 +1143,3 @@ footer {
 
 }
 
-
-/*.triangle__item > div.triangle__item--one {*/
-    /*animation: none !important;*/
-
-/*}*/
-/*.triangle__item {*/
-     /*background: red;*/
-     /*filter: blur(1px);*/
-    /*animation: none !important;*/
-/*}*/
