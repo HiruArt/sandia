@@ -90,9 +90,8 @@ if($(window).width() > 1150 ){
                     left: "linear",
                     top: "linear"
                 }
-            },
-
-            );
+            }
+        );
 
 
     });
