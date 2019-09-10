@@ -42,7 +42,6 @@ $(document).ready(function () {
 
 if($(window).width() > 1150 ){
 
-
     var flagHover = false;
     $('.triangle__item').mousemove(function (e) {
         if(flagHover == true || $(this).hasClass('triangle__item--four') || $(this).hasClass('triangle__item--five')){
@@ -78,11 +77,6 @@ if($(window).width() > 1150 ){
         } else {
             nextCoordY = (y_letter + positionYold) + 100;
         }
-
-        console.log('--');
-        console.log(positionYold);
-        console.log(nextCoordY);
-        console.log(y_letter);
 
         $(this).animate( { left : nextCoordX, top : nextCoordY}, {
                 duration: 3000,
